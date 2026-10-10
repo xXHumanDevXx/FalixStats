@@ -1,0 +1,67 @@
+# =====================================================================
+#  FalixStats - Konfiguration
+#  Farben mit &-Codes. Platzhalter in {geschweiften Klammern}.
+#  Config-Änderungen: /fstats reload
+#  update-ticks ändert sich erst nach einem Server-Neustart.
+#
+#  Platzhalter:
+#  {online}  Spieler online       {max}    maximale Spielerzahl
+#  {player}  Name des Spielers    {world}  Welt des Spielers
+#  {x} {y} {z}  Position des Spielers (Blockkoordinaten)
+#  {time}    Ingame-Uhrzeit       {clock}  echte Uhrzeit (Serverzeit)
+#  {ram}     genutzter RAM        {world-players}  Spieler in der Welt
+# =====================================================================
+
+settings:
+  update-ticks: 20             # wie oft aktualisiert wird (20 = jede Sekunde)
+
+# ---------------------------------------------------------------------
+#  Seitliche Liste (Sidebar)
+#  Jede Zeile ist eine Zeile der Liste, von oben nach unten.
+#  Maximal 15 Zeilen.
+# ---------------------------------------------------------------------
+sidebar:
+  enabled: true
+  title: "&b&lFalix &7Stats"
+  lines:
+    - "&7"
+    - "&fOnline: &a{online}&7/&a{max}"
+    - "&fWelt: &b{world} &8(&7{world-players}&8)"
+    - "&fZeit: &e{time} &8| &e{clock}"
+    - "&fRAM: &d{ram}"
+    - "&7"
+    - "&fDeine Position:"
+    - "&8X &f{x} &8Y &f{y} &8Z &f{z}"
+    - "&7"
+    - "&bfalix.example"
+
+# ---------------------------------------------------------------------
+#  Bossbar (der Balken oben am Bildschirm)
+#  color:    BLUE, GREEN, PINK, PURPLE, RED, WHITE, YELLOW
+#  style:    SOLID, SEGMENTED_6, SEGMENTED_10, SEGMENTED_12, SEGMENTED_20
+#  progress-mode:
+#    fixed   = fester Wert (fixed-progress, 0.0 bis 1.0)
+#    online  = Anteil der Spieler (online / maximal)
+#    time    = Tag-Nacht-Fortschritt der Overworld
+# ---------------------------------------------------------------------
+bossbar:
+  enabled: true
+  text: "&bWillkommen auf &lFalix &8| &7{online} Spieler online"
+  color: PURPLE
+  style: SOLID
+  progress-mode: fixed
+  fixed-progress: 1.0
+
+# ---------------------------------------------------------------------
+#  Nachrichten
+# ---------------------------------------------------------------------
+messages:
+  prefix: "&8[&bFalixStats&8] &7"
+  usage: "{prefix}&cBenutzung: &f{usage}"
+  player-only: "{prefix}&cDieser Befehl ist nur für Spieler."
+  no-permission: "{prefix}&cDazu hast du keine Berechtigung."
+  reloaded: "{prefix}&aKonfiguration neu geladen."
+  sidebar-on: "{prefix}&aDeine Seitenliste ist jetzt &fan&a."
+  sidebar-off: "{prefix}&eDeine Seitenliste ist jetzt &faus&e."
+  bossbar-on: "{prefix}&aDeine Bossbar ist jetzt &fan&a."
+  bossbar-off: "{prefix}&eDeine Bossbar ist jetzt &faus&e."
