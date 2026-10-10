@@ -1,0 +1,20 @@
+name: FalixStats
+version: 1.0.0
+main: de.falixstats.FalixStats
+api-version: '1.21'
+description: Seitliche Info-Liste (Sidebar) und Bossbar, komplett per config anpassbar
+
+commands:
+  fstats:
+    description: Sidebar und Bossbar verwalten
+    usage: /fstats <sidebar | bossbar | reload>
+    aliases: [fs]
+    permission: falixstats.use
+
+permissions:
+  falixstats.use:
+    description: Darf die eigene Sidebar und Bossbar ein- und ausschalten
+    default: true
+  falixstats.admin:
+    description: Darf die Config neu laden
+    default: op
