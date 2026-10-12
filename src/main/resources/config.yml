@@ -1,0 +1,95 @@
+# =====================================================================
+#  FalixStats - Konfiguration
+#  Farben mit &-Codes. Platzhalter in {geschweiften Klammern}.
+#  Config-Änderungen: /fstats reload
+#  update-ticks ändert sich erst nach einem Server-Neustart.
+#
+#  Platzhalter:
+#  {online}  Spieler online       {max}    maximale Spielerzahl
+#  {player}  Name des Spielers    {world}  Welt des Spielers
+#  {ram}     genutzter RAM        {world-players}  Spieler in der Welt
+#  {clock}   echte Uhrzeit        {time}   Ingame-Uhrzeit
+#  {x} {y} {z}  Position des Spielers
+# =====================================================================
+
+settings:
+  update-ticks: 20
+
+# ---------------------------------------------------------------------
+#  Seitliche Liste (Sidebar)
+#  max-length: maximale sichtbare Zeichen pro Zeile
+#  Maximal 15 Zeilen, von oben nach unten.
+# ---------------------------------------------------------------------
+sidebar:
+  enabled: true
+  max-length: 28
+  title: "&b&lXCraft"
+  lines:
+    - "&7"
+    - "&8&m                    "
+    - "&7Online &a{online}&8/&a{max}"
+    - "&7Welt &b{world}"
+    - "&7RAM &d{ram}"
+    - "&8&m                    "
+    - "&7"
+
+# ---------------------------------------------------------------------
+#  Tab-Menü (Liste aller Spieler, mit Taste Tab geöffnet)
+#  header / footer: Zeilen oben und unten, Platzhalter erlaubt
+#  groups: Rang-Präfixe. Die erste passende Gruppe gewinnt.
+#    permission leer = gilt für alle (immer ganz unten als Fallback setzen)
+#    Rechte vergibst du z. B. über LuckPerms oder ein anderes Rechte-Plugin.
+# ---------------------------------------------------------------------
+tab:
+  enabled: true
+  header:
+    - ""
+    - "&b&lXCRAFT"
+    - "&8&m                          "
+    - "&7Willkommen, &f{player}"
+    - ""
+  footer:
+    - ""
+    - "&8&m                          "
+    - "&7Online &a{online}&8/&a{max}"
+    - "&8XCraft"
+  groups:
+    - permission: "falixstats.tab.admin"
+      prefix: "&c&l[Admin] &c"
+    - permission: "falixstats.tab.mod"
+      prefix: "&9[Mod] &9"
+    - permission: "falixstats.tab.ultimate"
+      prefix: "&6&l[Ultimate] &6"
+    - permission: ""
+      prefix: "&7"
+
+# ---------------------------------------------------------------------
+#  Bossbar (der Balken oben am Bildschirm)
+#  color:    BLUE, GREEN, PINK, PURPLE, RED, WHITE, YELLOW
+#  style:    SOLID, SEGMENTED_6, SEGMENTED_10, SEGMENTED_12, SEGMENTED_20
+#  progress-mode:
+#    fixed   = fester Wert (fixed-progress, 0.0 bis 1.0)
+#    online  = Anteil der Spieler (online / maximal)
+#    time    = Tag-Nacht-Fortschritt der Overworld
+# ---------------------------------------------------------------------
+bossbar:
+  enabled: true
+  text: "&b&lXCraft &8» &7{online} Spieler online"
+  color: BLUE
+  style: SOLID
+  progress-mode: fixed
+  fixed-progress: 1.0
+
+# ---------------------------------------------------------------------
+#  Nachrichten
+# ---------------------------------------------------------------------
+messages:
+  prefix: "&8[&bFalixStats&8] &7"
+  usage: "{prefix}&cBenutzung: &f{usage}"
+  player-only: "{prefix}&cDieser Befehl ist nur für Spieler."
+  no-permission: "{prefix}&cDazu hast du keine Berechtigung."
+  reloaded: "{prefix}&aKonfiguration neu geladen."
+  sidebar-on: "{prefix}&aDeine Seitenliste ist jetzt &fan&a."
+  sidebar-off: "{prefix}&eDeine Seitenliste ist jetzt &faus&e."
+  bossbar-on: "{prefix}&aDeine Bossbar ist jetzt &fan&a."
+  bossbar-off: "{prefix}&eDeine Bossbar ist jetzt &faus&e."

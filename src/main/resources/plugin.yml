@@ -1,0 +1,26 @@
+name: FalixStats
+version: 1.1.0
+main: de.falixstats.FalixStats
+api-version: '1.21'
+description: Sidebar, Bossbar und Tab-Menü (Header, Footer, Rang-Präfixe), komplett per config anpassbar
+
+commands:
+  fstats:
+    description: Sidebar und Bossbar verwalten
+    usage: /fstats <sidebar | bossbar | reload>
+    aliases: [fs]
+    permission: falixstats.use
+
+permissions:
+  falixstats.use:
+    description: Darf die eigene Sidebar und Bossbar ein- und ausschalten
+    default: true
+  falixstats.admin:
+    description: Darf die Config neu laden
+    default: op
+  falixstats.tab.admin:
+    description: Rang-Präfix für Admins im Tab-Menü
+    default: op
+  falixstats.tab.mod:
+    description: Rang-Präfix für Moderatoren im Tab-Menü
+    default: op
